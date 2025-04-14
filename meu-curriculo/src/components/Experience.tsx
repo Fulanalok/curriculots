@@ -16,9 +16,9 @@ const Experience = () => {
         {experiences.map((exp, index) => (
           <li key={index} className="mb-4">
             <h3 className="text-xl font-semibold">{exp.title}</h3>
-            <p className="text-gray-300">{exp.company}</p>
-            <p className="text-gray-300">{exp.location}</p>
-            <p className="text-gray-300">{exp.date}</p>
+            <p className="text-gray-100">{exp.company}</p>
+            <p className="text-gray-100">{exp.location}</p>
+            <p className="text-gray-3  00">{exp.date}</p>
             <p>{exp.description}</p>
           </li>
         ))}

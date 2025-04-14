@@ -74,12 +74,12 @@ const skillGroups: SkillGroup[] = [
 const Skills = () => {
   return (
     <section className="mb-8">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-6">Habilidades</h2>
+      <h2 className="text-2xl font-semibold text-gray-200 mb-6">Habilidades</h2>
 
       <div className="space-y-6">
         {skillGroups.map((group) => (
           <div key={group.category}>
-            <h3 className="text-xl font-semibold text-gray-700 mb-3">
+            <h3 className="text-xl font-semibold text-gray-200 mb-3">
               {group.category}
             </h3>
             <ul className="flex flex-wrap gap-3 text-gray-800">

@@ -1,16 +1,53 @@
-// src/components/DarkModeToggle.tsx
-import React from "react";
+import { useEffect, useState } from "react";
 
-const DarkModeToggle: React.FC = () => {
+const DarkModeToggle = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedMode = localStorage.getItem("darkMode");
+
+    if (savedMode !== null) {
+      setIsDarkMode(savedMode === "true");
+      document.documentElement.classList.toggle("dark", savedMode === "true");
+    } else {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      setIsDarkMode(prefersDark);
+      document.documentElement.classList.toggle("dark", prefersDark);
+      localStorage.setItem("darkMode", String(prefersDark));
+    }
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (localStorage.getItem("darkMode") === null) {
+        setIsDarkMode(e.matches);
+        document.documentElement.classList.toggle("dark", e.matches);
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
   const toggleDarkMode = () => {
-    document.documentElement.classList.toggle("dark");
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    document.documentElement.classList.toggle("dark", newMode);
+    localStorage.setItem("darkMode", String(newMode));
   };
 
   return (
     <button
       onClick={toggleDarkMode}
-      className="px-4 py-2 mb-4 bg-gray-200 dark:bg-gray-700 rounded text-sm">
-      Alternar Tema
+      className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white transition-all duration-300"
+      aria-label={
+        isDarkMode ? "Mudar para modo claro" : "Mudar para modo escuro"
+      }>
+      {isDarkMode ? <>☀️ Modo Claro</> : <>🌙 Modo Escuro</>}
     </button>
   );
 };
