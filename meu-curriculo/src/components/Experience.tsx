@@ -11,15 +11,19 @@ const Experience = () => {
 
   return (
     <section className="mb-8">
-      <h2 className="text-2xl font-bold mb-4">Experience</h2>
+      <h2 className="text-4xl font-bold mb-4 flex flex-col items-center justify-center  text-center">
+        Experience
+      </h2>
       <ul className="list-disc pl-5">
         {experiences.map((exp, index) => (
           <li key={index} className="mb-4">
-            <h3 className="text-xl font-semibold">{exp.title}</h3>
-            <p className="text-gray-100">{exp.company}</p>
-            <p className="text-gray-100">{exp.location}</p>
-            <p className="text-gray-300">{exp.date}</p>
-            <p>{exp.description}</p>
+            <h3 className="text-xl font-semibold items-center justify-center  text-center">
+              {exp.title}
+            </h3>
+            <p className="[dark]text-gray-100 text-center">{exp.company}</p>
+            <p className="[dark]text-gray-100 text-center">{exp.location}</p>
+            <p className="[dark]text-gray-100 text-center">{exp.date}</p>
+            <p className="[dark]text-gray-100 text-center">{exp.description}</p>
           </li>
         ))}
       </ul>

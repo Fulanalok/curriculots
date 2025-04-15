@@ -51,7 +51,7 @@ const skillGroups: SkillGroup[] = [
       { name: "Express", icon: <SiExpress className="text-gray-500" /> },
       {
         name: "Next.js",
-        icon: <SiNextdotjs className="text-black dark:text-white" />,
+        icon: <SiNextdotjs className="text-black " />,
       },
       {
         name: "Tailwind CSS",
@@ -66,7 +66,7 @@ const skillGroups: SkillGroup[] = [
       { name: "Git", icon: <FaGitAlt className="text-orange-600" /> },
       {
         name: "GitHub",
-        icon: <FaGithub className="text-gray-800 dark:text-white" />,
+        icon: <FaGithub className="text-gray-800 " />,
       },
       { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
     ],
