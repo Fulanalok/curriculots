@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Configurações globais */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -15,35 +16,56 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
   background-color: #ffffff;
   color: #000000;
 }
 
-html.dark body {
-  background-color: 1e293b;
-  color: #ffffff;
+a {
+  color: #1d4ed8;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-html {
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: #e5e7eb;
+  color: #1f2937;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-html.dark {
+button:hover {
+  background-color: #d1d5db;
+}
+
+/* Modo Escuro */
+html.dark,
+html.dark body {
   background-color: #111827;
   color: #ffffff;
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+html.dark a {
+  color: #1d4ed8;
+}
+
+html.dark button {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+html.dark button:hover {
+  background-color: #4b5563;
 }

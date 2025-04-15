@@ -7,65 +7,31 @@
   text-align: center;
 }
 
-html,
-body {
+h1,
+h2,
+h3 {
   margin: 0;
-  padding: 0;
-  height: 100%;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 700;
 }
-
-body {
-  background-color: #ffffff;
-  color: #000000;
-}
-
 
 h1 {
   font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
 }
 
-p {
-  font-size: 1.125rem;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
+h2 {
+  font-size: 2rem;
 }
 
-button {
-  background-color: #1a1a1a;
-  color: white;
-  border-radius: 8px;
-  padding: 0.6em 1.2em;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #333;
+h3 {
+  font-size: 1.5rem;
 }
 
 html.dark .App {
   background-color: #1e293b;
 }
 
-html.dark h1 {
+html.dark h1,
+html.dark h2,
+html.dark h3 {
   color: #ffffff;
-}
-
-html.dark p {
-  color: #ffffff;
-}
-
-html.dark button {
-  background-color: #4b5563;
-}
-
-html.dark body{
-  background-color: #1e293b;
-  color:#ffffff
 }
