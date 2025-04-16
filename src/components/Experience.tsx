@@ -12,7 +12,7 @@ const Experience = () => {
   return (
     <section className="mb-8">
       <h2 className="text-4xl font-bold mb-4 flex flex-col items-center justify-center  text-center">
-        Experience
+        Experiência
       </h2>
       <ul className="list-disc pl-5">
         {experiences.map((exp, index) => (
